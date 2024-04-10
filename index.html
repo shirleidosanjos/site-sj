@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cantora & Compositora Shirlei Dos Anjos</title>
+<link href="https://fonts.googleapis.com/css?family=Roboto|Open+Sans|Lato|Montserrat|Oswald&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+<style>
+/* Estilos gerais */
+body {
+  font-family: 'Open Sans', sans-serif;
+  background: linear-gradient(to bottom, #ffffff 0%,#e6e6e6 100%);
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+/* Estilos do logotipo */
+.logo {
+  width: 588px;
+  height: 181px;
+  background-image: url('./fia.png.png');
+  margin: 0 auto;
+}
+/* Estilos do título */
+.title {
+  font-size: 48px;
+  color: bronze;
+  text-shadow: 3px 3px 10px rgba(0,0,0,0.5);
+  margin-top: 20px;
+}
+/* Estilos do container de vídeos */
+.video-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+/* Estilos dos vídeos */
+.video {
+  width: 560px;
+  height: 315px;
+  margin: 10px;
+}
+/* Estilos do container de cards */
+.card-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+/* Estilos dos cards */
+.card {
+  width: 300px;
+  height: 200px;
+  margin: 10px;
+  padding: 20px;
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+  border: 1px solid #ccc;
+  background: #fff;
+  text-align: left;
+  position: relative;
+}
+/* Estilos das imagens dos cards */
+.card img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+}
+/* Estilos dos títulos dos cards */
+.card-title {
+  font-size: 24px;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+/* Estilos dos subtítulos dos cards */
+.card-subtitle {
+  font-size: 18px;
+  font-weight: bold;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+}
+/* Estilos do botão */
+.button {
+  display: block;
+  width: 300px;
+  height: 50px;
+  background-color: #f12711;
+  color: white;
+  text-transform: uppercase;
+  margin: 20px auto;
+  line-height: 50px;
+  border-radius: 25px;
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+/* Efeito hover do botão */
+.button:hover {
+  background-color: #f5af19;
+  transform: scale(1.1);
+}
+/* Estilos do parallax */
+.parallax {
+  background-image: url('./Paralax.jpg');
+  min-height: 500px;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+/* Estilos do relógio */
+.clock {
+  font-size: 50px;
+  font-weight: bold;
+  color: #333;
+  background: #f12711;
+  display: inline-block;
+  padding: 15px;
+  border-radius: 25px;
+  margin-top: 20px;
+}
+/* Estilos do carrossel */
+.owl-carousel .item {
+  margin: 3px;
+}
+.owl-carousel .item img {
+  display: block;
+  width: 300px;
+  height: 300px;
+}
+/* Estilos dos ícones sociais */
+.social-icons img {
+  width: 50px;
+  height: 50px;
+  margin: 0 10px;
+}
+/* Estilos do rodapé */
+footer {
+  background: #333;
+  color: white;
+  padding: 20px;
+  font-size: 14px;
+}
+/* Estilos para o quadro de imagens e texto ao lado */
+.content-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+.image-frame {
+  width: 1080px;
+  height: 548px;
+  position: relative;
+  overflow: hidden;
+  background-color: #e6e6e6;
+  margin: 20px;
+}
+.image-frame img {
+  position: absolute;
+  border: 1px solid #000;
+  transition: transform 0.5s ease;
+}
+.image-frame img:hover {
+  transform: scale(1.1);
+}
+.image-frame img:nth-child(1) {
+  top: 15%;
+  left: 30%;
+  width: 20%;
+  height: 50%;
+}
+.image-frame img:nth-child(2) {
+  top: 10%;
+  left: 50%;
+  width: 40%;
+  height: 60%;
+}
+.image-frame img:nth-child(3) {
+  bottom: 3%;
+  left: 33%;
+  width: 30%;
+  height: 45%;
+}
+.image-frame img:nth-child(4) {
+  bottom: 7%;
+  right: 5%;
+  width: 35%;
+  height: 35%;
+}
+.text-container {
+  max-width: 500px;
+}
+.text-container h1 {
+  font-size: 48px; /* Tamanho H1 */
+}
+.text-container h2 {
+  font-size: 24px; /* Tamanho H2 */
+}
+/* Estilos para a seção de áudio */
+.audio-container {
+  background: #f5f5f5;
+  padding: 20px;
+  margin: 20px auto;
+  width: 300px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+.audio-container img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+</style>
+</head>
+<body>
+
+<div class="logo"></div>
+<h1 class="title">Cantora & Compositora Shirlei Dos Anjos</h1>
+
+<div class="video-container">
+  <iframe class="video" src="./amor.mp4.mp4"></iframe>
+  <iframe class="video" src="./trono.mp4.mp4"></iframe>
+</div>
+
+<div class="card-container">
+  <div class="card">
+    <img src="./logo.png.png" alt="A Espada">
+    <div class="card-title">A ESPADA</div>
+    <div class="card-subtitle">Louvor</div>
+  </div>
+  <div class="card">
+    <img src="./logo.png.png" alt="Pare de Sofrer">
+    <div class="card-title">PARE DE SOFRER</div>
+    <div class="card-subtitle">Louvor</div>
+  </div>
+  <div class="card">
+    <img src="./logo.png.png" alt="No Deserto">
+    <div class="card-title">NO DESERTO</div>
+    <div class="card-subtitle">Louvor</div>
+  </div>
+</div>
+
+<a href="https://www.youtube.com/channel/UCEqSpCdI1XM-gJp-GALjQdA" class="button">Saiba Mais Sobre O Meu Ministério</a>
+
+<div class="parallax"></div>
+
+<div class="clock" id="clock"></div>
+
+<h2>Me Siga Nas Minhas Redes Sociais</h2>
+<div class="social-icons">
+  <img src="./youtube.png.png" alt="Facebook">
+  <img src="./facebook.png.png" alt="Twitter">
+  <img src="./instagram.png.png" alt="Instagram">
+  <img src="./tiktok.png.png" alt="YouTube">
+</div>
+
+<!-- Seção de Áudio -->
+<div class="audio-container">
+  <img src="https://lh3.googleusercontent.com/pw/AP1GczOAW1NhjtJnJ5u4TEQj0VoxYwvUO0pYLuSICY3bHawo12FObdUIXThnVgTCH4nS6Tuq5AFrXwEbTVTsl99cptFd0A277oY6_htoXEgn83zFat5zZ6ySmtUELh26aWja4M0uSy-Ko6B85ik7VKApESwa4puMy83eQSxGyPoxsqdqKupwMHAAzkhPl7roeXMlzYV2ovsHlzRa6lm5LDWo-S4ZpR0aP6SWdQMunfXGQ6VmcpVA_bzW4UjvyAwpRvJOBXzPr9S-ySSB3jz4PsuWpBbLhFpMVQuA4XyWODGFVSpn_oIUU1Hfs_gYvZhTvg_3ztfXXZPb6-ROznv2F9MliDis7MMMNVwkImihGg3zO9kMMU2iPudcaDPBSNxXvcRtMM-rvMS2d8A-S8mZgVCcDl7Diwz99PY8fuPzYa2ljrtOzpjpqFqNeT-_g022X7dqYNYR-C9Xa6HKA6GJbgVsEHA0vvqYM_XHFpwN8yBG6_Y6QNSnNVqjz7Vxb1WQVgtY3VGmY95qzwXdTUxL6pWO6aJA2UzLYmZk5uDEmv081JBX8-Lz_QFaSgY-cZM2GzHsKALt39rh-1SGiE86MNHfAFUgGevGbTXd7y0oKkNZNRspXE8vA6z9D_ySWYtqZIoTNsaaTbl2PvYnD6BMCy8dESdn3iGlTE51-4fbdJEQwEAA96eJ4oHaeZaxGCijTtG-dg2j9atzZXHHUaLvZ1KgwzWBNjB2aOhr88vYaq4Eeu4gPDXeVuaImiQDYZqy4rRpVO8tGsaZV9PrEckxW9HAM8mPU9XTXvPVtHl1DK31OsApH9X5llbkYPGiLBkYTelOSCTJgG3ST0aMpWk3OVhd1BylMCDTJJwMTAqn5PvMM3q4_TtqcfCoPPFe4jWIw72XWJ2Etz22qWLqm2HX9vYEvzmgkiFY7F-m1EpuXhgkBuKQ7bdiC9KOxC7djxNLgX4-VnbMx1RbYlatd8GCprOayXSeKS3Ru0up_6ovhMj_exyykET6xKfQTMa2sHhXEuXfAQ=w662-h202-s-no-gm?authuser=0" alt="Álbum 1">
+  <audio id="audio1">
+    <source src="caminho-para-audio1.mp3" type="audio/mpeg">
+   Seu navegador não suporta o elemento de áudio.
+  </audio>
+  <button onclick="document.getElementById('audio1').play()">Play</button>
+  <button onclick="document.getElementById('audio1').pause()">Pause</button>
+
+  <!-- Repita para os outros áudios conforme necessário -->
+
+  <img src="https://lh3.googleusercontent.com/pw/AP1GczOAW1NhjtJnJ5u4TEQj0VoxYwvUO0pYLuSICY3bHawo12FObdUIXThnVgTCH4nS6Tuq5AFrXwEbTVTsl99cptFd0A277oY6_htoXEgn83zFat5zZ6ySmtUELh26aWja4M0uSy-Ko6B85ik7VKApESwa4puMy83eQSxGyPoxsqdqKupwMHAAzkhPl7roeXMlzYV2ovsHlzRa6lm5LDWo-S4ZpR0aP6SWdQMunfXGQ6VmcpVA_bzW4UjvyAwpRvJOBXzPr9S-ySSB3jz4PsuWpBbLhFpMVQuA4XyWODGFVSpn_oIUU1Hfs_gYvZhTvg_3ztfXXZPb6-ROznv2F9MliDis7MMMNVwkImihGg3zO9kMMU2iPudcaDPBSNxXvcRtMM-rvMS2d8A-S8mZgVCcDl7Diwz99PY8fuPzYa2ljrtOzpjpqFqNeT-_g022X7dqYNYR-C9Xa6HKA6GJbgVsEHA0vvqYM_XHFpwN8yBG6_Y6QNSnNVqjz7Vxb1WQVgtY3VGmY95qzwXdTUxL6pWO6aJA2UzLYmZk5uDEmv081JBX8-Lz_QFaSgY-cZM2GzHsKALt39rh-1SGiE86MNHfAFUgGevGbTXd7y0oKkNZNRspXE8vA6z9D_ySWYtqZIoTNsaaTbl2PvYnD6BMCy8dESdn3iGlTE51-4fbdJEQwEAA96eJ4oHaeZaxGCijTtG-dg2j9atzZXHHUaLvZ1KgwzWBNjB2aOhr88vYaq4Eeu4gPDXeVuaImiQDYZqy4rRpVO8tGsaZV9PrEckxW9HAM8mPU9XTXvPVtHl1DK31OsApH9X5llbkYPGiLBkYTelOSCTJgG3ST0aMpWk3OVhd1BylMCDTJJwMTAqn5PvMM3q4_TtqcfCoPPFe4jWIw72XWJ2Etz22qWLqm2HX9vYEvzmgkiFY7F-m1EpuXhgkBuKQ7bdiC9KOxC7djxNLgX4-VnbMx1RbYlatd8GCprOayXSeKS3Ru0up_6ovhMj_exyykET6xKfQTMa2sHhXEuXfAQ=w662-h202-s-no-gm?authuser=0" alt="Álbum 2">
+  <audio id="audio2">
+    <source src="https://lh3.googleusercontent.com/pw/AP1GczObd5zDtExjBii9R2v5ul82NncKpcaG_ReLAd3cu3YfEm8mNf101W6qady2BgQgJ8t-WyR7zbuOfMhW1j0FyhduVKtFSYndelqh8KiyZTBeCGRYbV_-liXnV2ZZ2I2RjgpFwNiVaG9b6n2lIyWk3yGT4ufZEhIuaFmK4Y0pLBGSLItqnGeOU1QxM0U6Ob2RLg9edhPstlSkjcZrpTc3Rdoo3q4sP04Z72BQnZcpQXHSEf1dToYHS6vMpnMv8mO1nH-Tz0ONEsvZbDVlEl0rfpuOJK4O5-LHyVSD-8x9PvzQUjBFu_oTG4CtpZSLwCrzT2HCELs3OQYK6HLYY660STQt0PKRwJug-89YCUEMsCGXhm3IN7coQZvkFPASnfgW_ULxbsiLhWSUM7firIK3zZVQtQl1FFoTK2LnBfBjNc8cbDElQpJ028x0Ewx7VpSUjo4x2iEyvJ2jf7oX7t5L3rCWBQ4OUhAd-ZupSHfmF19sib_HqUMJ8xZYDhT6FsntUabeLoyKLN4pgKi4bUrWohCu5o3VFoynEEyWKmxAuThrqFyeu4taT9vw6KajqeK_EwyXY96nWnVTlNAvpgDA4CYITJNAg5b_De5wGgTWe8Zr4o6xDax__cL35igDr-eW519aEwjesAQ-Su_Vp8elhSpKkpV5YazmVVMLFABhQfDJfNViEMssJ6NhJZxhKigtusRuc3yVgshSK1lplrX7ft2g9XuY8XswRdJcCfJCm4TcDOsbnQQuEvTJe9_zfYyAmEEzXYFx58mWyb5LMR9DwWgPXjaX9usSUE2YMoU722cPeJMqHrFHSEggfVHzk4RHxH3ffSNPPqoIPnRXnLEPGwx3fKIgSJ6tvKsbyw2GaR28uxdWqUuFwOb1BQlOUv-2G7k4f1ox0vSWYmYOvUvsCXPySKa94qfjMg6Eidc5Uq2kAKfxbCFhQ1W_Gz-UIKYy32fTmKrpsmFWIx57mAvPwXgqUrUQDrhMvrHe2Jxh2IWHrkGvcnzeEoE39vYc-MYHuWU=w320-h320-s-no-gm?authuser=0" type="audio/mpeg">
+    Seu navegador não suporta o elemento de áudio.
+  </audio>
+  <button onclick="document.getElementById('audio2').play()">Play</button>
+  <button onclick="document.getElementById('audio2').pause()">Pause</button>
+
+  <img src="https://lh3.googleusercontent.com/pw/AP1GczOAW1NhjtJnJ5u4TEQj0VoxYwvUO0pYLuSICY3bHawo12FObdUIXThnVgTCH4nS6Tuq5AFrXwEbTVTsl99cptFd0A277oY6_htoXEgn83zFat5zZ6ySmtUELh26aWja4M0uSy-Ko6B85ik7VKApESwa4puMy83eQSxGyPoxsqdqKupwMHAAzkhPl7roeXMlzYV2ovsHlzRa6lm5LDWo-S4ZpR0aP6SWdQMunfXGQ6VmcpVA_bzW4UjvyAwpRvJOBXzPr9S-ySSB3jz4PsuWpBbLhFpMVQuA4XyWODGFVSpn_oIUU1Hfs_gYvZhTvg_3ztfXXZPb6-ROznv2F9MliDis7MMMNVwkImihGg3zO9kMMU2iPudcaDPBSNxXvcRtMM-rvMS2d8A-S8mZgVCcDl7Diwz99PY8fuPzYa2ljrtOzpjpqFqNeT-_g022X7dqYNYR-C9Xa6HKA6GJbgVsEHA0vvqYM_XHFpwN8yBG6_Y6QNSnNVqjz7Vxb1WQVgtY3VGmY95qzwXdTUxL6pWO6aJA2UzLYmZk5uDEmv081JBX8-Lz_QFaSgY-cZM2GzHsKALt39rh-1SGiE86MNHfAFUgGevGbTXd7y0oKkNZNRspXE8vA6z9D_ySWYtqZIoTNsaaTbl2PvYnD6BMCy8dESdn3iGlTE51-4fbdJEQwEAA96eJ4oHaeZaxGCijTtG-dg2j9atzZXHHUaLvZ1KgwzWBNjB2aOhr88vYaq4Eeu4gPDXeVuaImiQDYZqy4rRpVO8tGsaZV9PrEckxW9HAM8mPU9XTXvPVtHl1DK31OsApH9X5llbkYPGiLBkYTelOSCTJgG3ST0aMpWk3OVhd1BylMCDTJJwMTAqn5PvMM3q4_TtqcfCoPPFe4jWIw72XWJ2Etz22qWLqm2HX9vYEvzmgkiFY7F-m1EpuXhgkBuKQ7bdiC9KOxC7djxNLgX4-VnbMx1RbYlatd8GCprOayXSeKS3Ru0up_6ovhMj_exyykET6xKfQTMa2sHhXEuXfAQ=w662-h202-s-no-gm?authuser=0" alt="Álbum 3">
+  <audio id="audio3">
+    <source src="caminho-para-audio3.mp3" type="audio/mpeg">
+    Seu navegador não suporta o elemento de áudio.
+  </audio>
+  <button onclick="document.getElementById('audio3').play()">Play</button>
+  <button onclick="document.getElementById('audio3').pause()">Pause</button>
+
+  <img src="https://lh3.googleusercontent.com/pw/AP1GczOAW1NhjtJnJ5u4TEQj0VoxYwvUO0pYLuSICY3bHawo12FObdUIXThnVgTCH4nS6Tuq5AFrXwEbTVTsl99cptFd0A277oY6_htoXEgn83zFat5zZ6ySmtUELh26aWja4M0uSy-Ko6B85ik7VKApESwa4puMy83eQSxGyPoxsqdqKupwMHAAzkhPl7roeXMlzYV2ovsHlzRa6lm5LDWo-S4ZpR0aP6SWdQMunfXGQ6VmcpVA_bzW4UjvyAwpRvJOBXzPr9S-ySSB3jz4PsuWpBbLhFpMVQuA4XyWODGFVSpn_oIUU1Hfs_gYvZhTvg_3ztfXXZPb6-ROznv2F9MliDis7MMMNVwkImihGg3zO9kMMU2iPudcaDPBSNxXvcRtMM-rvMS2d8A-S8mZgVCcDl7Diwz99PY8fuPzYa2ljrtOzpjpqFqNeT-_g022X7dqYNYR-C9Xa6HKA6GJbgVsEHA0vvqYM_XHFpwN8yBG6_Y6QNSnNVqjz7Vxb1WQVgtY3VGmY95qzwXdTUxL6pWO6aJA2UzLYmZk5uDEmv081JBX8-Lz_QFaSgY-cZM2GzHsKALt39rh-1SGiE86MNHfAFUgGevGbTXd7y0oKkNZNRspXE8vA6z9D_ySWYtqZIoTNsaaTbl2PvYnD6BMCy8dESdn3iGlTE51-4fbdJEQwEAA96eJ4oHaeZaxGCijTtG-dg2j9atzZXHHUaLvZ1KgwzWBNjB2aOhr88vYaq4Eeu4gPDXeVuaImiQDYZqy4rRpVO8tGsaZV9PrEckxW9HAM8mPU9XTXvPVtHl1DK31OsApH9X5llbkYPGiLBkYTelOSCTJgG3ST0aMpWk3OVhd1BylMCDTJJwMTAqn5PvMM3q4_TtqcfCoPPFe4jWIw72XWJ2Etz22qWLqm2HX9vYEvzmgkiFY7F-m1EpuXhgkBuKQ7bdiC9KOxC7djxNLgX4-VnbMx1RbYlatd8GCprOayXSeKS3Ru0up_6ovhMj_exyykET6xKfQTMa2sHhXEuXfAQ=w662-h202-s-no-gm?authuser=0" alt="Álbum 4">
+  <audio id="audio4">
+    <source src="caminho-para-audio4.mp3" type="audio/mpeg">
+    Seu navegador não suporta o elemento de áudio.
+  </audio>
+  <button onclick="document.getElementById('audio4').play()">Play</button>
+  <button onclick="document.getElementById('audio4').pause()">Pause</button>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+<script>
+// Código JavaScript para inicializar o carrossel e os controles de áudio
+$(document).ready(function(){
+  $('.owl-carousel').owlCarousel({
+    loop: true,
+    margin: 10,
+    responsiveClass: true,
+    responsive: {
+      0: {
+        items: 1,
+        nav: true
+      },
+      600: {
+        items: 3,
+        nav: false
+      },
+      1000: {
+        items: 4,
+        nav: true,
+        loop: false
+      }
+    }
+  });
+});
+
+function playAudio(audioId) {
+  var audio = document.getElementById(audioId);
+  audio.play();
+}
+
+function pauseAudio(audioId) {
+  var audio = document.getElementById(audioId);
+  audio.pause();
+}
+</script>
+
+</body>
+</html>
+
+<!-- Carrossel de Imagens -->
+<div class="owl-carousel owl-theme">
+  <div class="item"><img src="./amor.png.png" alt="Imagem 1"></div>
+  <div class="item"><img src="./amose.png.png" alt="Imagem 2"></div>
+  <div class="item"><img src="./amosegande.png.png" alt="Imagem 3"></div>
+  <div class="item"><img src="./amosinho.png.png" alt="Imagem 4"></div>
+</div>
+<div class="image-frame" id="imageFrame">
+  <img src="./cruz.png.png" alt="Imagem 1">
+  <img src="./leão.png.png" alt="Imagem 2">
+  <img src="./passagem.png.png">
+  <img src="./ministro.png.png" alt="Imagem 4">
+</div>
+
+
+<!-- Rodapé -->
+<footer>
+  &copy; 2024 Cantora & Compositora Shirlei Dos Anjos
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+<script>
+  $(document).ready(function(){
+    $('.owl-carousel').owlCarousel({
+      loop: true,
+      margin: 10,
+      autoplay: true,
+      autoplayTimeout: 3000,
+      responsiveClass: true,
+      responsive: {
+        0: {
+          items: 1,
+          nav: true
+        },
+        600: {
+          items: 3,
+          nav: false
+        },
+        1000: {
+          items: 4,
+          nav: true,
+          loop: false
+        }
+      }
+    });
+  });
+
+  // Função para atualizar o relógio digital
+  function updateClock() {
+    var now = new Date();
+    var hours = now.getHours();
+    var minutes = now.getMinutes();
+    var seconds = now.getSeconds();
+    hours = hours < 10 ? '0' + hours : hours;
+    minutes = minutes < 10 ? '0' + minutes : minutes;
+    seconds = seconds < 10 ? '0' + seconds : seconds;
+    document.getElementById('clock').textContent = hours + ':' + minutes + ':' + seconds;
+  }
+  setInterval(updateClock, 1000);
+</script>
+
+</body>
+</html>
